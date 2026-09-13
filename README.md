@@ -8,9 +8,9 @@ open-mythos/
 ├── pyproject.toml            # Package metadata & build configuration
 │
 ├── configs/                  # Hyperparameter & scaling configurations
-│   ├── model_80b_config.json # Layer sizes, MoE expert counts, MLA params
-│   ├── pretrain_config.yaml  # Distributed pretraining (FSDP / Megatron-LM)
-│   └── grpo_config.yaml      # Reinforcement Learning (GRPO) config
+│   
+│   
+│   
 │
 ├── open_mythos/              # Core Python package
 │   ├── __init__.py
