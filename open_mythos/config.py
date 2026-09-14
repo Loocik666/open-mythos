@@ -35,3 +35,14 @@ class OpenMythosConfig:
         with open(json_file_path, "r", encoding="utf-8") as f:
             config_dict = json.load(f)
         return cls(**config_dict)
+
+    @classmethod
+    def from_json(cls, json_file_path: str) -> "OpenMythosConfig":
+        """
+        Alias for from_json_file() for backwards compatibility.
+        """
+        return cls.from_json_file(json_file_path)
+
+
+# Alias for backwards compatibility
+ModelConfig = OpenMythosConfig
