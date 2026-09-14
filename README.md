@@ -273,5 +273,4 @@ GitHub repository, 2024. https://github.com/kyegomez/OpenMythos
 ---
 
 **Status**: 🧪 Research/Experimental  
-**Last Updated**: 2024  
 **Maintained By**: Open-source community
