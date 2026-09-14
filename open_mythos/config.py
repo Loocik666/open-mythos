@@ -1,13 +1,15 @@
+"""Configuration management for OpenMythos models."""
+
 import json
 from dataclasses import dataclass
-from typing import Dict, Any, Optional, List
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
 
 @dataclass
 class OpenMythosConfig:
-    """
-    Configuration schema for OpenMythos models.
-    Acts purely as a type structure — all values are dynamically populated from JSON files.
-    """
+    """Model configuration schema."""
+
     model_type: str
     vocab_size: int
     hidden_size: int
@@ -28,21 +30,16 @@ class OpenMythosConfig:
     architectures: Optional[List[str]] = None
 
     @classmethod
-    def from_json_file(cls, json_file_path: str) -> "OpenMythosConfig":
-        """
-        Parses a target JSON file and maps all key-value pairs directly to the class fields.
-        """
-        with open(json_file_path, "r", encoding="utf-8") as f:
+    def from_json_file(cls, path: str | Path) -> "OpenMythosConfig":
+        """Load configuration from JSON file."""
+        with open(path, "r", encoding="utf-8") as f:
             config_dict = json.load(f)
         return cls(**config_dict)
 
     @classmethod
-    def from_json(cls, json_file_path: str) -> "OpenMythosConfig":
-        """
-        Alias for from_json_file() for backwards compatibility.
-        """
-        return cls.from_json_file(json_file_path)
+    def from_json(cls, path: str | Path) -> "OpenMythosConfig":
+        """Alias for from_json_file()."""
+        return cls.from_json_file(path)
 
 
-# Alias for backwards compatibility
 ModelConfig = OpenMythosConfig

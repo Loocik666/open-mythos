@@ -1,53 +1,26 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools>=65", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "open-mythos"
 version = "0.1.0"
-description = "OpenMythos: Advanced Language Model with MoE and LoRA"
+description = "Advanced language model with Mixture of Experts and LoRA"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [
-    {name = "OpenMythos Contributors", email = "admin@openmythos.dev"}
-]
+authors = [{name = "OpenMythos Contributors", email = "admin@openmythos.dev"}]
 classifiers = [
     "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
-dependencies = [
-    "torch>=2.0.0",
-    "numpy>=1.24.0",
-]
+dependencies = ["torch>=2.0.0", "numpy>=1.24.0"]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
-    "black>=23.0.0",
-    "ruff>=0.1.0",
-    "mypy>=1.0.0",
-]
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0"]
 
 [tool.pytest.ini_options]
-minversion = "7.0"
-addopts = "-v --strict-markers --tb=short"
 testpaths = ["tests"]
-markers = [
-    "unit: unit tests",
-    "integration: integration tests",
-]
-
-[tool.black]
-line-length = 100
-target-version = ['py310']
-
-[tool.ruff]
-line-length = 100
-target-version = "py310"
-select = ["E", "F", "W"]
+addopts = "-v --tb=short"
