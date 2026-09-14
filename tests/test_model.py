@@ -3,8 +3,8 @@ import pytest
 import torch
 
 # Импортируйте ваш загрузчик и модель из open_mythos
-# from open_mythos.config import ModelConfig
-# from open_mythos.model import MythosModel
+from open_mythos.config import ModelConfig
+from open_mythos.model import MythosModel
 
 CONFIG_PATH = Path("configs/model_micro_1.5b.json")
 
